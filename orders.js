@@ -14,16 +14,14 @@ function applyDiscount(order, percent) {
 function cancelOrder(order) {
   return { ...order, status: 'cancelled', total: 0 };
 }
-//calculate points with rounding and VIP bonus
+
+// Calculate points with rounding and VIP bonus
 function calculateLoyaltyPoints(order) {
-<<<<<<< HEAD
-  return Math.round(order.total / 10);
-=======
   let multiplier = 1;
   if (order.total > 100) {
     multiplier = 1.5;
   }
-  return Math.floor((order.total / 10) * multiplier);
->>>>>>> origin/feature/loyalty-points
+  return Math.round((order.total / 10) * multiplier);
 }
+
 module.exports = { createOrder, applyDiscount, cancelOrder, calculateLoyaltyPoints };
