@@ -14,7 +14,7 @@ function applyDiscount(order, percent) {
 function cancelOrder(order) {
   return { ...order, status: 'cancelled', total: 0 };
 }
-
+//calculate points with rounding and VIP bonus
 function calculateLoyaltyPoints(order) {
 <<<<<<< HEAD
   return Math.round(order.total / 10);
